@@ -1,0 +1,6 @@
+<h2>新增工作招聘</h2>
+<%= simple_form_for [:admin, @job] do |f|%>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "Submit", disable_with: "Submitting..." %>
+<% end %>
