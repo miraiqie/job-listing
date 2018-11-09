@@ -16,4 +16,7 @@ class Job < ApplicationRecord
     self.save
   end
 
+  scope :published, -> { where(is_hidden: false)}
+  scope :recent, -> { order('updated_at DESC')}
+
 end
