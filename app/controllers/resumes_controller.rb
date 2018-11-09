@@ -1,4 +1,5 @@
 class ResumesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def new
     @job = Job.find(params[:job_id])
     @resume = Resume.new
@@ -23,7 +24,7 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require.(:resume).permit(:content, :attachment)
+    params.require(:resume).permit(:content, :attachment)
   end
 
 end
