@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  has_many :resumes
+  
   validates :title, presence: true
   validates :description, presence: true
   validates :wage_upper_bound, presence: true
